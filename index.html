@@ -14,65 +14,67 @@
 <body>
   <h1 class="text-6xl text-center m-4 text-indigo-800 font-bold">ABC Bank</h1>
 
-  <div class="w-full max-w-xs content-center 	">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div class="mb-4 ">
-        <label class="block text-gray-700 text-sm font-bold mb-2">
-          Account Number
-        </label>
-        <input class="
-              shadow
-              appearance-none
-              border
-              rounded
-              w-full
-              py-2
-              px-3
-              text-gray-700
-              leading-tight
-              focus:outline-none focus:shadow-outline
-            " id="AccountNumber" type="text" placeholder="Account Number" />
-            <p class="text-gray-400 text-xs italic mt-1">For Testing (Acc No:123-456-789)</p>
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2">
-          Password
-        </label>
-        <input class="
-              shadow
-              appearance-none
-              border
-              rounded
-              w-full
-              py-2
-              px-3
-              text-gray-700
-              leading-tight
-              focus:outline-none focus:shadow-outline
-            " id="Password" type="password" placeholder="**************" />
-            <p class="text-gray-400 text-xs italic">For Testing (Pass:saikat123)</p>
-        <p class="text-red-500 text-xs italic mt-1" id="incorrectPassword"></p>
-      </div>
-      <div class="flex items-center justify-between">
-        <button id="login" class="
-              bg-blue-500
-              hover:bg-blue-700
-              text-white
-              font-bold
-              py-2
-              px-4
-              rounded
-              focus:outline-none focus:shadow-outline
-            " type="button">
-          Login
-        </button>
-      </div>
-    </form>
-    <p class="text-center text-gray-500 text-xs">
-      ©2021 ABC Bank. All rights reserved.
-    </p>
+  <div class="section flex justify-center mt-5">
+    <div >
+      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4 ">
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Account Number
+          </label>
+          <input class="
+                shadow
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              " id="AccountNumber" type="text" placeholder="Account Number" />
+              <p class="text-gray-400 text-xs italic mt-1">For Testing (Acc No:123-456-789)</p>
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Password
+          </label>
+          <input class="
+                shadow
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              " id="Password" type="password" placeholder="**************" />
+              <p class="text-gray-400 text-xs italic">For Testing (Pass:saikat123)</p>
+          <p class="text-red-500 text-xs italic mt-1" id="incorrectPassword"></p>
+        </div>
+        <div class="flex items-center justify-between">
+          <button id="login" class="
+                bg-blue-500
+                hover:bg-blue-700
+                text-white
+                font-bold
+                py-2
+                px-4
+                rounded
+                focus:outline-none focus:shadow-outline
+              " type="button" >
+            Login
+          </button>
+        </div>
+      </form>
+     
+    </div>
   </div>
-
+  <p class="text-center text-gray-500 text-xs">
+    ©2021 ABC Bank. All rights reserved.
+  </p>
   <script src="Login.js"></script>
 </body>
 
