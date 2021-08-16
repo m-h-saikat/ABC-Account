@@ -1,52 +1,37 @@
-document.getElementById('Deposite').addEventListener('click',function(){
-    const DValue =document.getElementById('DepositeAmount').value;
-    if(DValue=='')
-    {
-        DValue=0;
+// Get Input Value
+function getInputValue(inputID) {
+    const InputValue = document.getElementById(inputID);
+    const FinalInputValue = parseFloat(InputValue.value);
+    InputValue.value = '';
+    return FinalInputValue;
+}
+//Update Deposite or Withdraw Balance
+function depositeORwithdrawBalanceUpdate(depositeORwithdrawValue, depositeORwithdrawID) {
+    let amount = document.getElementById(depositeORwithdrawID);
+    let amountValue = parseFloat(amount.innerText);
+    amount.innerText = amountValue + depositeORwithdrawValue;
+}
+// Balance Calculate
+function balanceCalculate(balanceID, depositeOrWithdrawValue) {
+    let Balance = document.getElementById(balanceID);
+    const BalanceValue = parseFloat(Balance.innerText);
+    console.log(BalanceValue);
+    console.log(BalanceValue + depositeOrWithdrawValue);
+    Balance.innerText = BalanceValue + depositeOrWithdrawValue;
+}
+//Deposite 
+document.getElementById('Deposite').addEventListener('click', function () {
+    const DepositeValue = getInputValue('DepositeAmount');
+    if (DepositeValue > 0) {
+        depositeORwithdrawBalanceUpdate(DepositeValue, 'DepositeBalance');
+        balanceCalculate('Balance', DepositeValue);
     }
-    const DepositeValue= parseInt(DValue);
-    const DBalance=document.getElementById('DepositeBalance').innerText;
-    var depositebalance=parseInt(DBalance);
-    const DTotal=DepositeValue + depositebalance;
-    DepositeBalance.innerText=DTotal;
-
-    DepositeAmount.value='';
-
-
-
-//Total Balance Calculate
-
-   const TBalance= document.getElementById('Balance').innerText;
-  const  tBalance=parseInt(TBalance)
-   const TotalBalance= DepositeValue + tBalance;
-   Balance.innerText=TotalBalance;
-
-
-
 })
-
-
-
-
-document.getElementById('Withdraw').addEventListener('click',function(){
-    const WValue =document.getElementById('WithdrawAmount').value;
-    if(WValue=='')
-    {
-        WValue=0;
+//Withdraw
+document.getElementById('Withdraw').addEventListener('click', function () {
+    const WithdrawValue = getInputValue('WithdrawAmount');
+    if (WithdrawValue > 0) {
+        depositeORwithdrawBalanceUpdate(WithdrawValue, 'WithdrawBalance');
+        balanceCalculate('Balance', (-1 * WithdrawValue));
     }
-    const WithdrawValue= parseInt(WValue);
-    const WBalance=document.getElementById('WithdrawBalance').innerText;
-    const withdrawbalance=parseInt(WBalance);
-    const WTotal=WithdrawValue + withdrawbalance;
-    WithdrawBalance.innerText=WTotal;
-
-    WithdrawAmount.value='';
-
-// //Total Balance Calculate
-   const TBalance= document.getElementById('Balance').innerText;
-  const  tBalance=parseInt(TBalance)
-   const TotalBalance=  tBalance - WithdrawValue;
-   Balance.innerText=TotalBalance;
-
-
 })
